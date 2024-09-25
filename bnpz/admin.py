@@ -41,9 +41,9 @@ class NewAdmin(admin.ModelAdmin):
     list_display = ('number', 'category', 'language', 'title', 'date', 'is_active')
     list_filter = ['number', 'category']
     fields = ('number',
-              'language', 'category', 'title', 'mainImage', 'description_1', 'description_2', 'description_3',
-              'description_4',
-              'description_5', 'img_1', 'img_2', 'img_3', 'img_4', 'img_5', 'is_active')
+              'language', 'category', 'title', 'mainImage', 'description_1', 'description_2', 'img_1', 'description_3',
+              'img_2', 'description_4', 'img_3',
+              'description_5', 'img_4', 'img_5', 'is_active')
 
 
 @admin.register(CategoryTender)

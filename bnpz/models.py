@@ -6,6 +6,10 @@ from django.contrib import messages
 from bnpz.message import result, subject
 from bnpz.send_code import send_code
 from config import settings
+from ckeditor.fields import RichTextField
+
+
+# from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -47,14 +51,14 @@ class New(models.Model):
                                  related_name="new")
     title = models.CharField(max_length=400, verbose_name="Sarlavha")
     mainImage = models.ImageField(default="new.png", verbose_name="Asosiy rasm. 500x500 shart", null=True, blank=True)
-    description_1 = models.TextField(verbose_name="Ta'rif 1", null=True, blank=True)
-    description_2 = models.TextField(verbose_name="Ta'rif 2", null=True, blank=True)
-    description_3 = models.TextField(verbose_name="Ta'rif 3", null=True, blank=True)
-    description_4 = models.TextField(verbose_name="Ta'rif 4", null=True, blank=True)
-    description_5 = models.TextField(verbose_name="Ta'rif 5", null=True, blank=True)
+    description_1 = RichTextField(verbose_name="Ta'rif 1", null=True, blank=True)
+    description_2 = RichTextField(verbose_name="Ta'rif 2", null=True, blank=True)
     img_1 = models.ImageField(verbose_name="Rasm 1", null=True, blank=True)
+    description_3 = RichTextField(verbose_name="Ta'rif 3", null=True, blank=True)
     img_2 = models.ImageField(verbose_name="Rasm 2", null=True, blank=True)
+    description_4 = RichTextField(verbose_name="Ta'rif 4", null=True, blank=True)
     img_3 = models.ImageField(verbose_name="Rasm 3", null=True, blank=True)
+    description_5 = RichTextField(verbose_name="Ta'rif 5", null=True, blank=True)
     img_4 = models.ImageField(verbose_name="Rasm 4", null=True, blank=True)
     img_5 = models.ImageField(verbose_name="Rasm 5", null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)

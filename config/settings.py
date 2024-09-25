@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "bnpz",
-
+    'ckeditor',
     'rest_framework',
 ]
 
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 
 CORS_ORIGIN_WHITELIST = (
@@ -78,6 +80,26 @@ TEMPLATES = [
     },
 ]
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'toolbar': [["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker"],
+                        ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+                         'JustifyRight', 'JustifyBlock'],
+                        ["Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript",
+                         "Superscript"], ['Undo', 'Redo'], ["Source"],
+                        ["Maximize"]],
+            'width': '800px',
+            'extraPlugins': ','.join([
+                'codesnippet',
+            ]),
+            'height': '400px',
+        },
+}
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
@@ -95,7 +117,6 @@ DATABASES = {
         # 'PORT': '5432',
     }
 }
-
 
 # DATABASES = {
 #     'default': {
